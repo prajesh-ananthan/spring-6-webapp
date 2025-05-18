@@ -1,11 +1,8 @@
-
 package com.prajeshananthan.spring6webapp.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Set;
 
@@ -13,6 +10,9 @@ import java.util.Set;
  * Created by Prajesh AV
  * Date: 16/12/2024
  */
+
+@Setter
+@Getter
 @Entity
 public class Book {
     @Id
@@ -23,28 +23,4 @@ public class Book {
 
     @ManyToMany
     private Set<Author> authors;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getIsbn() {
-        return isbn;
-    }
-
-    public void setIsbn(String isbn) {
-        this.isbn = isbn;
-    }
 }
